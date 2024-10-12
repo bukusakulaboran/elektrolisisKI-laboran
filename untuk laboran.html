@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung massa (gram) zat yang dibutuhkan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Menghitung massa (gram) zat padat yang dibutuhkan</h2>
+        <input type="number" id="molaritas" placeholder="Molaritas" required>
+        <input type="number" id="mr" placeholder="Mr" required>
+		<input type="number" id="volume" placeholder="Volume (ml)" required>
+        <button onclick="calculategram()">Hitung zat padat</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculategram() {
+            const molaritas = document.getElementById('molaritas').value;
+            const mr = document.getElementById('mr').value;
+			const volume = document.getElementById('volume').value;
+            const gram = molaritas * mr * volume / 1000 ;
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(gram) || gram <= 0) {
+                resultDiv.innerHTML = 'Silakan masukkan nilai yang valid.';
+            } else {
+                resultDiv.innerHTML = `Massa (gram) zat padat yang dibutuhkan  : ${gram.toFixed(2)}`;
+            }
+        }
+    </script>
+</body>
+
+<div class="recipe">
+        <h2>Cara membuat Larutan KI 0,5 M
+		<br>sebanyak 500 ml</br></h2>
+        <h3>Alat:</h3>
+        <ul>
+            <li>botol semprot aquades</li>
+            <li>gelas kimia 500 ml</li>
+            <li><i>alumunium foil</i></li>
+            <li>neraca analitik </li>
+			<li>gelas arloji</li>
+            <li>spatula</li>
+            <li>sarung tangan</li>
+            <li>labu ukur 500ml</li>
+        </ul>   
+		 <h3>Bahan:</h3>
+        <ul>
+            <li>KI sebanyak = 41,5 gr  </li>
+            <li>aquades 500 ml</li>   
+        </ul>
+        
+        <h3>Langkah-langkah:</h3>
+        <ol>
+            <li>siapkan 200 ml aquades dalam gelas kimia 500 ml</li>
+            <li>Timbang KI diatas <i>alumunium foil</i> menggunakan gelas arloji</li>
+            <li>Masukkan KI perlahan aduk rata menggunakan spatula</li>
+            <li>Campurkan 300 ml aquades kedalam labu ukur 500 ml sampai larutan homogen </li>
+            <li>Pindahkan kedalam botol reagen bersih, tutup rapat dan simpan ditempat sejuk</li>
+        </ol>
+    </div>
+	
+
+<div class="recipe">
+        <h2>Cara Pembuatan Indikator pp</h2>
+        <h3>Langkah-langkah</h3>
+        <ul>
+            <li>timbang pp 100 mg (0,1 gr)</li>
+            <li>tambahkan 100 ml etanol 96%</li>
+            <li>tambahkan 100 ml</li></ul>
+               
+        <h2>Cara Pembuatan Indikator amilum</h2>
+        <h3>Langkah-langkah</h3>
+        <ul>
+            <li>timbang amilum 2 gr </li>
+            <li>tambahkan 100 ml aquades, aduk sampai menjadi pasta</li>
+            <li>didihkan 900 ml aquades lalu campurkan sampai homogen</li>
+        </ul>
+        
+    </div>
+	
+</html>
